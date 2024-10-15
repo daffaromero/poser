@@ -50,7 +50,7 @@ export class Invoice1728962383829 implements MigrationInterface {
           {
             name: 'total_amount',
             type: 'decimal',
-            default: '0',
+            default: 0,
           },
         ],
       }),

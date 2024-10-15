@@ -3,7 +3,7 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Invoice {
   @PrimaryGeneratedColumn()
-  invoiceNo: number;
+  invoice_no: number;
 
   @Column()
   date: string;
@@ -15,7 +15,7 @@ export class Invoice {
   salesperson: string;
 
   @Column()
-  paymentType: paymentTypeEnum;
+  payment_type: paymentTypeEnum;
 
   @Column({ nullable: true })
   notes: string;
@@ -24,7 +24,7 @@ export class Invoice {
   products: { name: string; picture: string; stock: number; price: number }[];
 
   @Column('decimal')
-  totalAmount: number;
+  total_amount: number;
 }
 
 enum paymentTypeEnum {

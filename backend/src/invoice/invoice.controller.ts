@@ -13,8 +13,8 @@ export class InvoiceController {
 
   @Get()
   findAll(
-    @Query('page') page: number,
-    @Query('limit') limit: number,
+    @Query('page') page?: number,
+    @Query('limit') limit?: number,
   ): Promise<Invoice[]> {
     return this.invoiceService.findAll(page, limit);
   }
@@ -22,5 +22,10 @@ export class InvoiceController {
   @Get('revenue')
   getRevenueData(): Promise<any> {
     return this.invoiceService.getRevenueData();
+  }
+
+  @Get('products')
+  getProductSuggestions(@Query('query') query: string): any[] {
+    return this.invoiceService.getProductSuggestions(query);
   }
 }
